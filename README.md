@@ -45,9 +45,9 @@ We then use the cbn.gHet.R to combine the per-chromosome results:
 
 Using the example data:
 
-**Rscript cbn.gHet.R hetfeout . test**
+**Rscript cbn.gHet.R hetfeout cbnhetfeout test**
 
-This will generate an output **./test.cbfe.qc.txt**
+This will generate an output **cbnhetfeout/test.cbfe.qc.txt** (in example data file in the main folder)
 
 200001697       200001697       -0.3524941
 
