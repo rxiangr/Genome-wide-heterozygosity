@@ -17,15 +17,17 @@ Rscript gHet.R testplink/test.chr25 testplink/test.chr25.frq hetfeout test.chr25
 This will generate 2 files: hetfeout/test.chr25.fe.txt (also in example data file in the main folder)
 
 IID     genosum
+
 200001697       -4740.504
+
 200001718       -6577.204
+
 200004308       -4515.714
+
 200016610       -3639.084
+
 200020986       -4375.444
-201002087       -4178.284
-201002088       -4727.484
-201002093       -3894.444
-201002095       -3735.364
+
 
 which contains two columns. the 1st column is the individual ID and 2nd column is the sum of heterozygosity across SNPs for each individual in the supplied plink file.
 
@@ -48,10 +50,15 @@ Rscript cbn.gHet.R hetfeout . test
 This will generate an output ./test.cbfe.qc.txt
 
 200001697       200001697       -0.3524941
+
 200001718       200001718       -0.3952831
+
 200004308       200004308       -0.3207196
+
 200016610       200016610       -0.3021041
+
 200020986       200020986       -0.4385046
+
 201002087       201002087       -0.3294511
 
 The 1st two columns are repeated individual IDs and the 3rd column is the mean heterozygosity for individuals. 
