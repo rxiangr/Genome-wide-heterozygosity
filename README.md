@@ -7,4 +7,6 @@ If the choice of SNPs used to generate gHet involves a set of highly conserved S
 
 Two Rscripts are given to estimate gHet. gHet.R is to estimate gHet and we recommend doing this per chromosome if you have dense genotype data. cbn.gHet.R is to combine results generated from gHet.R per chromosome into a single fixed effects of gHet.
 
-To run the Rscript you will need R packages of 'data.table' and 'BEDMatrix' pre-installed in your R system. Also, the script is designed to work with plink binary files. Example plink datasets are provided with a tutorial of running the analysis. 
+To run the Rscript you will need R packages of 'data.table' and 'BEDMatrix' pre-installed in your R system. Also, the script is designed to work with plink binary files. 
+
+Example plink datasets () are provided with a tutorial of running the analysis: https://github.com/rxiangr/Genome-wide-heterozygosity/blob/tutorial/README.md 
