@@ -1,13 +1,58 @@
-kkkkkk
+Usage of gHet.R:
 
+#===note that to run gHet.R and cbn.gHet.R you need to install R packages of 'data.table' and 'BEDMatrix'
 
-# Genome-wide-heterozygosity and fitness
-R scripts to estimate heterozygosity across a set of loci or SNPs, which can be used to test associations with fitness.
+#module load R/4.0.0-foss-2020a
 
-Overview: the Rscripts implemenat the analysis which generates a quantitative fixed effects of genomic heterozygosity (gHet) across the genome  or a selection of SNPs, described in Xiang et al 2021 (https://www.biorxiv.org/content/10.1101/2021.04.19.440546v1). The purpose of this fixed effects is to have it fitted to a linear (mix) model to test if this heterzygosity is associated with a y, such as a complex trait. 
+Rscript gHet.R <../yourpath/prefix of plink file> <../yourpath/full name of plink file.frq> <../yourpath of output> <your outputname>
 
-If the choice of SNPs used to generate gHet involves a set of highly conserved SNPs across species, we can test if a trait is related to fitness. In Xiang et al 2021 (https://www.biorxiv.org/content/10.1101/2021.04.19.440546v1), we partition the genome into SNPs at conserved sites and SNPs at the remaining sites, then we generated 2 fixed effects of gHet estimated from the 2 sets of SNPs. Then we fit these 2 fixed effects of gHet into a linear mixed model (along with other fixed and random effects) to see how the trait is associated with them. We found traits like height or fertility is only significnatly associated with gHet from conserved sites but not with gHet from the remaining sites. Therefore, traits like height or fertility are more likely to be related to fitness.
+You can run gHet.R using example data (in folder testplink). There are plink binary (*bim/fam/bed) and frequency file (*.frq) which can be calculated using plink:
 
-Two Rscripts are given to estimate gHet. gHet.R is to estimate gHet and we recommend doing this per chromosome if you have dense genotype data. cbn.gHet.R is to combine results generated from gHet.R per chromosome into a single fixed effects of gHet.
+./plink --cow --keep-allele-order  --bfile testplink/test.chr25 --freq --out test.chr25
 
-To run the Rscript you will need R packages of 'data.table' and 'BEDMatrix' pre-installed in your R system. Also, the script is designed to work with plink binary files. Example plink datasets are provided with a tutorial of running the analysis. 
+Then you using gHet.R to read in plink genotypes and frequency data:
+
+Rscript gHet.R testplink/test.chr25 testplink/test.chr25.frq hetfeout test.chr25
+
+This will generate 2 files: hetfeout/test.chr25.fe.txt (also in example data file in the main folder)
+
+IID     genosum
+200001697       -4740.504
+200001718       -6577.204
+200004308       -4515.714
+200016610       -3639.084
+200020986       -4375.444
+201002087       -4178.284
+201002088       -4727.484
+201002093       -3894.444
+201002095       -3735.364
+
+which contains two columns. the 1st column is the individual ID and 2nd column is the sum of heterozygosity across SNPs for each individual in the supplied plink file.
+
+and hetfeout/test.chr25.fe.nSNPs
+
+10000
+
+which contains a value of number of SNPs in this analysis. Sum of heterozygosity and number of SNPs used can be used to calculate the mean of heterozygosity.
+
+If you repeat the above process for another chromosome, say chromosome 24, you will get another set of results, e.g., hetfeout/test.chr24.fe.txt and hetfeout/test.chr24.fe.nSNPs. 
+
+We then use the cbn.gHet.R to combine the per-chromosome results:
+
+Rscript cbn.gHet.R <../yourpathOf*fe.txt>  <../yourpath of output> <your outputname>
+
+Using the example data:
+
+Rscript cbn.gHet.R hetfeout . test
+
+This will generate an output ./test.cbfe.qc.txt
+
+200001697       200001697       -0.3524941
+200001718       200001718       -0.3952831
+200004308       200004308       -0.3207196
+200016610       200016610       -0.3021041
+200020986       200020986       -0.4385046
+201002087       201002087       -0.3294511
+
+The 1st two columns are repeated individual IDs and the 3rd column is the mean heterozygosity for individuals. 
+This file is compatible to quantitative fixed effects format of GCTA --qcovar (https://cnsgenomics.com/software/gcta/#GREMLanalysis) to be modelled with other random and/or fixed effects. 
