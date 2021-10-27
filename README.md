@@ -8,11 +8,11 @@
 
 You can run gHet.R using example data (in folder testplink). There are plink binary (*bim/fam/bed) and frequency file (*.frq) which can be calculated using plink:
 
-**./plink    --cow  --keep-allele-order    --bfile   testplink/test.chr25    --freq    --out  test.chr25**
+**./plink  --cow --keep-allele-order --bfile  testplink/test.chr25  --freq  --out test.chr25**
 
 Then you using gHet.R to read in plink genotypes and frequency data:
 
-**Rscript gHet.R   testplink/test.chr25    testplink/test.chr25.frq    hetfeout test.chr25**
+**Rscript gHet.R testplink/test.chr25  testplink/test.chr25.frq  hetfeout test.chr25**
 
 This will generate 2 files: **1) hetfeout/test.chr25.fe.txt** (also in example data file in the main folder)
 
@@ -41,11 +41,11 @@ If you repeat the above process for another chromosome, say chromosome 24, you w
 
 We then use the cbn.gHet.R to combine the per-chromosome results:
 
- **Rscript  cbn.gHet.R   <../yourpathOf*fe.txt>     <../yourpath of output>    <"your outputname">** 
+ **Rscript  cbn.gHet.R <../yourpathOf*fe.txt>  <../yourpath of output>  <"your outputname">** 
 
 Using the example data:
 
-**Rscript    cbn.gHet.R    hetfeout    cbnhetfeout   test**
+**Rscript  cbn.gHet.R  hetfeout  cbnhetfeout test**
 
 This will generate an output **cbnhetfeout/test.cbfe.qc.txt** (in example data file in the main folder)
 
