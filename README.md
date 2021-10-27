@@ -14,7 +14,7 @@ Then you using gHet.R to read in plink genotypes and frequency data:
 
 **Rscript gHet.R testplink/test.chr25 testplink/test.chr25.frq hetfeout test.chr25**
 
-This will generate 2 files: hetfeout/test.chr25.fe.txt (also in example data file in the main folder)
+This will generate 2 files: **hetfeout/test.chr25.fe.txt** (also in example data file in the main folder)
 
 IID     genosum
 
@@ -31,13 +31,13 @@ IID     genosum
 
 which contains two columns. the 1st column is the individual ID and 2nd column is the sum of heterozygosity across SNPs for each individual in the supplied plink file.
 
-and hetfeout/test.chr25.fe.nSNPs
+and **hetfeout/test.chr25.fe.nSNPs**
 
 10000
 
 which contains a value of number of SNPs in this analysis. Sum of heterozygosity and number of SNPs used can be used to calculate the mean of heterozygosity.
 
-If you repeat the above process for another chromosome, say chromosome 24, you will get another set of results, e.g., hetfeout/test.chr24.fe.txt and hetfeout/test.chr24.fe.nSNPs. 
+If you repeat the above process for another chromosome, say chromosome 24, you will get another set of results, e.g., **hetfeout/test.chr24.fe.txt** and **hetfeout/test.chr24.fe.nSNPs**. 
 
 We then use the cbn.gHet.R to combine the per-chromosome results:
 
@@ -47,7 +47,7 @@ Using the example data:
 
 **Rscript cbn.gHet.R hetfeout . test**
 
-This will generate an output ./test.cbfe.qc.txt
+This will generate an output **./test.cbfe.qc.txt**
 
 200001697       200001697       -0.3524941
 
