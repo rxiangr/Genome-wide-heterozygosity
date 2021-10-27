@@ -1,3 +1,6 @@
+kkkkkk
+
+
 # Genome-wide-heterozygosity and fitness
 R scripts to estimate heterozygosity across a set of loci or SNPs, which can be used to test associations with fitness.
 
