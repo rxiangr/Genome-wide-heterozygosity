@@ -1,6 +1,6 @@
-Usage of gHet.R:
+# Usage of gHet.R:
 
-#===note that to run gHet.R and cbn.gHet.R you need to install R packages of 'data.table' and 'BEDMatrix'
+# note that to run gHet.R and cbn.gHet.R you need to install R packages of 'data.table' and 'BEDMatrix'
 
 #module load R/4.0.0-foss-2020a
 
