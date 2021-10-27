@@ -41,7 +41,7 @@ If you repeat the above process for another chromosome, say chromosome 24, you w
 
 We then use the cbn.gHet.R to combine the per-chromosome results:
 
-**Rscript cbn.gHet.R <../yourpathOf*fe.txt>  <../yourpath of output> <your outputname>**
+** Rscript cbn.gHet.R <../yourpathOf*fe.txt>  <../yourpath of output>  <your outputname> **
 
 Using the example data:
 
