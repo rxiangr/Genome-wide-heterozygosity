@@ -14,7 +14,7 @@ Then you using gHet.R to read in plink genotypes and frequency data:
 
 **Rscript gHet.R testplink/test.chr25 testplink/test.chr25.frq hetfeout test.chr25**
 
-This will generate 2 files: **hetfeout/test.chr25.fe.txt** (also in example data file in the main folder)
+This will generate 2 files: **1) hetfeout/test.chr25.fe.txt** (also in example data file in the main folder)
 
 IID     genosum
 
@@ -31,7 +31,7 @@ IID     genosum
 
 which contains two columns. the 1st column is the individual ID and 2nd column is the sum of heterozygosity across SNPs for each individual in the supplied plink file.
 
-and **hetfeout/test.chr25.fe.nSNPs**
+and **2) hetfeout/test.chr25.fe.nSNPs**
 
 10000
 
