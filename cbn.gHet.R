@@ -1,7 +1,7 @@
 #!/usr/bin/env Rscript
 args = commandArgs(trailingOnly=TRUE)
 if (length(args)<3) {
-  stop("3 argument must be supplied, \nUsage: Rscript --vanilla cbn.gHet.R <../yourpathOf*fe.txt>  <../yourpath of output> <your outputname>", call.=FALSE)
+  stop("3 argument must be supplied, \nUsage: Rscript cbn.gHet.R <../yourpathOf*fe.txt>  <../yourpath of output> <your outputname>", call.=FALSE)
 }
 
 library(data.table)
