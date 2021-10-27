@@ -1,4 +1,4 @@
-# Usage of gHet.R:
+# Usage of gHet.R and cbn.gHet.R:
 
 #==**note that to run gHet.R and cbn.gHet.R you need to install R packages of 'data.table' and 'BEDMatrix'**
 
