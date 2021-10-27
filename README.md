@@ -9,4 +9,4 @@ Two Rscripts are given to estimate gHet. gHet.R is to estimate gHet and we recom
 
 To run the Rscript you will need R packages of 'data.table' and 'BEDMatrix' pre-installed in your R system. Also, the script is designed to work with plink binary files. 
 
-Example plink datasets () are provided with a tutorial of running the analysis: https://github.com/rxiangr/Genome-wide-heterozygosity/blob/tutorial/README.md 
+Example plink datasets (https://github.com/rxiangr/Genome-wide-heterozygosity/tree/main/testplink and ) are provided with a tutorial of running the analysis: https://github.com/rxiangr/Genome-wide-heterozygosity/blob/tutorial/README.md 
