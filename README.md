@@ -10,3 +10,7 @@ Two Rscripts are given to estimate gHet. gHet.R is to estimate gHet and we recom
 To run the Rscript you will need R packages of 'data.table' and 'BEDMatrix' pre-installed in your R system. Also, the script is designed to work with plink binary files. 
 
 Example plink datasets (https://github.com/rxiangr/Genome-wide-heterozygosity/tree/main/testplink and https://github.com/rxiangr/Genome-wide-heterozygosity/tree/main/hetfeout) are provided with a tutorial of running the analysis: https://github.com/rxiangr/Genome-wide-heterozygosity/blob/tutorial/README.md 
+
+Reference:
+Xiang R, Breen E, Bolormaa S, Vander Jagt C, Chamberlain A, Macleod I, Goddard M. Mutant alleles differentially shape fitness and other complex traits in cattle. Communications Biology (In Press). 2021
+Preprint: https://www.biorxiv.org/content/10.1101/2021.04.19.440546v2
