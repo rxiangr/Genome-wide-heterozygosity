@@ -4,7 +4,7 @@
 
 #module load R/4.0.0-foss-2020a
 
-**Rscript gHet.R <../yourpath/prefix of plink file> <../yourpath/full name of plink file.frq> <../yourpath of output> <your outputname>**
+**Rscript gHet.R <../yourpath/prefix of plink file> <../yourpath/full name of plink file.frq> <../yourpath of output> <"your outputname">**
 
 You can run gHet.R using example data (in folder testplink). There are plink binary (*bim/fam/bed) and frequency file (*.frq) which can be calculated using plink:
 
@@ -41,7 +41,7 @@ If you repeat the above process for another chromosome, say chromosome 24, you w
 
 We then use the cbn.gHet.R to combine the per-chromosome results:
 
-** Rscript cbn.gHet.R <../yourpathOf*fe.txt>  <../yourpath of output>  <your outputname> **
+ **Rscript cbn.gHet.R <../yourpathOf*fe.txt>  <../yourpath of output>  <"your outputname">** 
 
 Using the example data:
 
